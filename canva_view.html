@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva表示ビュー</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: sans-serif; }
+        iframe { width: 100%; height: 100%; border: none; }
+        .nav-bar {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: opacity 0.3s;
+        }
+        .nav-bar:hover { opacity: 1; }
+        .nav-bar a {
+            color: #ffbdf6;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: background 0.2s;
+        }
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .nav-bar .active { background: #ff47c5; color: white; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <span>ローカルプレビュー用切替パネル ➡️</span>
+        <a href="canva_view.html" class="active">📸 Canva版をそのまま表示</a>
+        <a href="mikamika.my.canva.site/dag-9zhzzv8/index.html">📥 完全にDLしたローカル版</a>
+        <a href="index.html">🔮 さっきまでの占いLP版</a>
+    </div>
+    <!-- 実際のCanvaサイトを埋め込んで表示 -->
+    <iframe src="https://mikamika.my.canva.site/dag-9zhzzv8" title="Canva Preview"></iframe>
+</body>
+</html>
