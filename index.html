@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>手相・タロット・星占いであなたの運命を紐解く - 運命の占い師 ルナ</title>
+    <title>AI × Instagram 次世代の稼ぎ方 | Sample LP</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
-        body { 
-            font-family: 'Noto Sans JP', sans-serif; 
-            /* 実写のタロットカード/占い風の背景画像に暗めのオーバーレイをかけて文字を読みやすくしています */
-            
+        body {
+            font-family: 'Noto Serif JP', serif;
+            background-color: #050505;
             color: #f8fafc;
-        /* ヒーロースライドショー */
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-sans { font-family: 'Noto Sans JP', sans-serif; }
+
+        /* スライドショーの背景 */
         .hero-slider {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -24,264 +29,193 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            transition: opacity 2s ease-in-out;
+            transition: opacity 1.5s ease-in-out;
         }
         .hero-slide.active { opacity: 1; }
-        
+
         .overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(20, 15, 35, 0.7), rgba(10, 5, 20, 0.9));
+            background: linear-gradient(to bottom, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.9) 80%, #050505 100%);
             z-index: -1;
-            pointer-events: none;
         }
 
+        /* ゴールドのテキスト装飾 */
+        .text-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #ffdf73 50%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
-        /* すりガラス風のパネル（グラスモーフィズム） */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #1f2937;
+        
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.4);
         }
-        .glass-dark {
-            background: rgba(30, 27, 75, 0.7);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(139, 92, 246, 0.3);
+
+        .gold-btn {
+            background: linear-gradient(135deg, #2a2a2a 0%, #111 100%);
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+            color: #000;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* アニメーション */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header / Hero Section -->
-    
-    <div class="hero-slider" id="slider">
-        <div class="hero-slide active" style="background-image: url('bg1.png');"></div>
-        <div class="hero-slide" style="background-image: url('bg2.png');"></div>
-        <div class="hero-slide" style="background-image: url('bg3.png');"></div>
-        <div class="hero-slide" style="background-image: url('bg4.png');"></div>
-        <div class="hero-slide" style="background-image: url('bg5.png');"></div>
+    <!-- 背景スライドショー (3秒切り替え) -->
+    <div class="hero-slider">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1920&q=80&auto=format&fit=crop');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&q=80&auto=format&fit=crop');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1920&q=80&auto=format&fit=crop');"></div>
     </div>
     <div class="overlay"></div>
 
-    <header class="py-24 px-4 text-center border-b border-purple-500/30 shadow-2xl relative z-10 glass-dark">
-
-        <h1 class="text-4xl md:text-6xl font-black text-purple-300 mb-6 leading-tight drop-shadow-lg">
-            手相・タロット・星占い<br class="md:hidden">であなたの運命を紐解く🔮
+    <!-- ヒーローセクション -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative z-10 fade-up">
+        <p class="font-cinzel text-gold tracking-[0.4em] mb-6 text-sm md:text-base uppercase">AI × Instagram Monetization</p>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-widest">
+            AI×Instagramで<br>
+            <span class="text-gold">圧倒的な収益化を</span>
         </h1>
-        <p class="text-xl md:text-2xl font-bold text-gray-200 mb-10 drop-shadow">
-            スピリチュアル起業ってホントにイイの？<br>
-            <span class="text-yellow-300 text-lg md:text-2xl mt-2 inline-block">スマホひとつで叶えられる未来✨</span>
+        <p class="text-gray-300 text-lg md:text-xl font-light tracking-widest max-w-2xl mx-auto leading-loose mb-12">
+            フォロワー数に依存しない、次世代のマネタイズ戦略。<br>
+            AIを駆使したコンテンツ生成で、あなたのSNSが「資産」に変わる。
         </p>
-        <div class="inline-block glass-panel px-10 py-5 rounded-full shadow-2xl">
-            <p class="font-bold text-gray-600 text-sm md:text-base">スピリチュアルカウンセラー</p>
-            <p class="text-3xl font-black text-gray-800">ルナ <span class="text-sm font-normal text-gray-500 ml-2">2026/03/06</span></p>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section class="max-w-4xl mx-auto py-20 px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-purple-200 border-b-2 border-purple-400 pb-2 inline-block">About</h2>
-        <div class="glass-panel rounded-2xl shadow-xl p-8 md:flex items-center gap-8 transform hover:scale-[1.01] transition-transform">
-            <div class="w-32 h-32 bg-gradient-to-br from-purple-200 to-indigo-300 rounded-full flex items-center justify-center text-5xl mb-6 md:mb-0 mx-auto shrink-0 shadow-inner">
-                🔮
-            </div>
-            <div>
-                <ul class="space-y-4 text-lg">
-                    <li>✅ <strong class="text-purple-700">タロット・手相鑑定が好評</strong> ～あなたの運命を切り開くお手伝い～</li>
-                    <li>✅ <strong class="text-purple-700">1120人以上</strong>の人生のお悩みを解決</li>
-                    <li>✅ 北海道出身 / 毎日ヒーリングを行っています✨</li>
-                    <li>✅ 大学生２名のシンママ</li>
-                    <li>✅ 霊感ゼロ・未経験のあたしでもできた！</li>
-                </ul>
-            </div>
+        <a href="#entry" class="gold-btn px-12 py-5 rounded-sm tracking-widest text-lg font-bold">
+            MASTER CLASS に参加する
+        </a>
+        <div class="mt-20 animate-bounce">
+            <p class="text-xs tracking-widest text-gray-500 mb-2">SCROLL</p>
+            <div class="w-[1px] h-16 bg-gray-500 mx-auto"></div>
         </div>
     </section>
 
-    <!-- Problem & Solution Section -->
-    <section class="py-20 px-4 glass-dark my-10 border-y border-purple-500/20">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-yellow-300 drop-shadow">おウチにいながら空き時間で<br>めっちゃイイです‼️</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-panel p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold mb-5 text-gray-800 border-l-4 border-purple-500 pl-4">特別な能力は最初はいらない</h3>
-                    <ul class="list-disc list-inside space-y-3 text-gray-700 font-medium">
-                        <li>顔出し要らず（音声やテキスト鑑定でもOK）</li>
-                        <li>カードの読み方や線の意味から丁寧に学べる</li>
-                        <li>等身大であなたの直感が光る</li>
-                        <li>周りに左右されない・自分のペースでできる</li>
-                    </ul>
-                </div>
-                <div class="glass-panel p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold mb-5 text-gray-800 border-l-4 border-purple-500 pl-4">実績（2025年ゼロから開始）</h3>
-                    <ul class="list-disc list-inside space-y-3 text-gray-700 font-medium">
-                        <li>リピーター数 230名</li>
-                        <li>オンライン鑑定で<strong class="text-purple-700 text-xl">月20〜月120万円</strong></li>
-                        <li>3ヶ月目くらいから副収入発生</li>
-                        <li>鑑定単価 1,000円〜22,000円</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Target Audience Section -->
-    <section class="max-w-4xl mx-auto py-16 px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-purple-200">こんなひとにオススメ💡</h2>
-        <div class="flex flex-wrap justify-center gap-4">
-            <span class="glass-panel px-6 py-4 rounded-full font-bold shadow-md text-purple-900 border-2 border-purple-300/50">人の相談に乗るのが好き</span>
-            <span class="glass-panel px-6 py-4 rounded-full font-bold shadow-md text-purple-900 border-2 border-purple-300/50">顔出しがイヤ</span>
-            <span class="glass-panel px-6 py-4 rounded-full font-bold shadow-md text-purple-900 border-2 border-purple-300/50">スピリチュアルに興味がある</span>
-            <span class="glass-panel px-6 py-4 rounded-full font-bold shadow-md text-purple-900 border-2 border-purple-300/50">自宅でこっそり副業したい</span>
-            <span class="glass-panel px-6 py-4 rounded-full font-bold shadow-md text-purple-900 border-2 border-purple-300/50">HSP気質で繊細な人</span>
-        </div>
-    </section>
-
-    <!-- Content / How Section -->
-    <section class="glass-dark text-white py-20 px-4 my-10 border-y border-purple-500/20">
+    <!-- CONCEPT -->
+    <section class="py-24 px-4 bg-black/60 backdrop-blur-sm z-10 relative border-t border-white/10 fade-up">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-10 text-purple-200">私の場合はどんなコト提供してる？</h2>
-            <div class="grid md:grid-cols-2 gap-6 text-left">
-                <div class="bg-black/40 backdrop-blur-md p-8 rounded-xl border border-white/10">
-                    <ul class="space-y-4 text-lg">
-                        <li class="flex items-center gap-2"><span>🃏</span> タロットカード鑑定</li>
-                        <li class="flex items-center gap-2"><span>✋</span> 手相占いオンライン講座</li>
-                        <li class="flex items-center gap-2"><span>✨</span> 遠隔ヒーリングセッション</li>
-                        <li class="flex items-center gap-2"><span>🌙</span> 新月・満月の願い事ワーク</li>
-                        <li class="flex items-center gap-2"><span>🔮</span> 直感を磨くチャネリング練習</li>
-                    </ul>
+            <h2 class="font-cinzel text-3xl md:text-4xl text-gold tracking-widest mb-12">CONCEPT</h2>
+            <h3 class="text-2xl md:text-3xl font-bold mb-8 tracking-widest leading-relaxed">
+                センスも時間も不要。<br>
+                AIがあなたの専属マーケターになる。
+            </h3>
+            <p class="text-gray-300 font-sans font-light leading-loose text-base md:text-lg mb-12 text-left md:text-center max-w-3xl mx-auto">
+                「毎日投稿を作るのが大変」「フォロワーが増えてもマネタイズできない」<br>
+                そんなInstagramの常識は、AIの登場によって完全に崩れ去りました。<br><br>
+                最先端のAIツールを活用することで、魅力的な画像生成、心を動かすキャプション作成、そして売上につながる導線設計までを自動化。<br>
+                1日わずか30分の作業で、あなたは「仕組みを作る側」へとシフトします。
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTENTS -->
+    <section class="py-24 px-4 z-10 relative fade-up">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-cinzel text-3xl md:text-4xl text-gold tracking-widest mb-16 text-center">PROGRAM</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 01 -->
+                <div class="gold-border p-8 bg-black/40 backdrop-blur-md rounded-sm">
+                    <p class="font-cinzel text-gold text-2xl mb-4">01</p>
+                    <h3 class="text-xl font-bold mb-4 tracking-wider">AIコンテンツ生成術</h3>
+                    <p class="text-gray-400 font-sans text-sm leading-relaxed">
+                        ChatGPTや画像生成AIを使い、プロ顔負けのInstagram投稿を数分で大量生産するプロンプトとテクニックを伝授します。
+                    </p>
                 </div>
-                <div class="bg-black/40 backdrop-blur-md p-8 rounded-xl flex items-center justify-center border border-white/10">
-                    <p class="text-xl leading-relaxed text-center">あとは日々の吉方位のこと・<br>感じたエネルギーや<br>行ったパワースポットとか📝</p>
+                <!-- 02 -->
+                <div class="gold-border p-8 bg-black/40 backdrop-blur-md rounded-sm">
+                    <p class="font-cinzel text-gold text-2xl mb-4">02</p>
+                    <h3 class="text-xl font-bold mb-4 tracking-wider">アルゴリズム攻略</h3>
+                    <p class="text-gray-400 font-sans text-sm leading-relaxed">
+                        フォロワーが少なくても「発見タブ」に載るための、最新のInstagramアルゴリズムの仕組みと、AIを使ったハッシュタグ選定法。
+                    </p>
+                </div>
+                <!-- 03 -->
+                <div class="gold-border p-8 bg-black/40 backdrop-blur-md rounded-sm">
+                    <p class="font-cinzel text-gold text-2xl mb-4">03</p>
+                    <h3 class="text-xl font-bold mb-4 tracking-wider">自動マネタイズ構築</h3>
+                    <p class="text-gray-400 font-sans text-sm leading-relaxed">
+                        集めたアクセスを確実に収益に変える。アフィリエイトや自社商品販売へのスムーズな導線をAIで構築する方法。
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mini Game Section -->
-    <section class="max-w-4xl mx-auto py-16 px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6 text-yellow-300 drop-shadow">🎮 ちょっとひと息！スピリチュアルパワー受信ゲーム ✨</h2>
-        <p class="mb-8 text-gray-200 text-lg">10秒間でどれだけ「幸運の星」をタップできるかな？<br>（あなたの直感力と受信力をテスト！）</p>
-        <div class="glass-panel border-4 border-yellow-300/50 rounded-xl p-4 relative overflow-hidden shadow-2xl" style="height: 300px; max-width: 500px; margin: 0 auto;" id="game-area">
-            <div id="score-display" class="text-xl font-bold text-gray-800 absolute top-3 left-4 z-10">受信力: 0 パワー</div>
-            <div id="time-display" class="text-xl font-bold text-red-600 absolute top-3 right-4 z-10">残り: 10秒</div>
-            <button id="start-btn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold py-4 px-10 rounded-full hover:from-purple-600 hover:to-indigo-700 shadow-xl z-20 text-2xl transition-transform active:scale-95 border-2 border-white/20">直感スタート！</button>
-            <div id="coin" class="hidden absolute text-6xl cursor-pointer select-none transition-transform active:scale-75 z-10 drop-shadow-md" style="top: 50%; left: 50%;">🌟</div>
-        </div>
-        <script>
-            let score = 0;
-            let timeLeft = 10;
-            let gameInterval;
-            let timerInterval;
+    <!-- DETAILS (Sample) -->
+    <section id="entry" class="py-24 px-4 bg-[#0a0a0a] z-10 relative border-t border-white/10 fade-up">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-cinzel text-3xl md:text-4xl text-gold tracking-widest mb-12">INFORMATION</h2>
+            <p class="text-red-500 font-sans text-sm mb-6 border border-red-500 inline-block px-3 py-1">※こちらはサンプルページのため架空の情報です</p>
+            
+            <div class="gold-border p-8 md:p-12 bg-black text-left mb-12">
+                <dl class="space-y-6 font-sans">
+                    <div class="flex flex-col md:flex-row border-b border-white/10 pb-4">
+                        <dt class="w-32 font-bold text-gray-400 mb-2 md:mb-0">開催日時</dt>
+                        <dd class="flex-1 text-gray-200">2026年 〇月 〇日 (土) 20:00 - 22:00<br><span class="text-xs text-gray-500">※オンライン(Zoom)開催</span></dd>
+                    </div>
+                    <div class="flex flex-col md:flex-row border-b border-white/10 pb-4">
+                        <dt class="w-32 font-bold text-gray-400 mb-2 md:mb-0">参加費用</dt>
+                        <dd class="flex-1 text-gray-200"><span class="text-gold font-bold text-xl">¥19,800</span> (税込)</dd>
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                        <dt class="w-32 font-bold text-gray-400 mb-2 md:mb-0">定員</dt>
+                        <dd class="flex-1 text-gray-200">先着30名様限定</dd>
+                    </div>
+                </dl>
+            </div>
 
-            const gameArea = document.getElementById('game-area');
-            const startBtn = document.getElementById('start-btn');
-            const coin = document.getElementById('coin');
-            const scoreDisplay = document.getElementById('score-display');
-            const timeDisplay = document.getElementById('time-display');
-
-            startBtn.addEventListener('click', startGame);
-            coin.addEventListener('mousedown', hitCoin);
-            coin.addEventListener('touchstart', (e) => { e.preventDefault(); hitCoin(); });
-
-            function startGame() {
-                score = 0;
-                timeLeft = 10;
-                scoreDisplay.innerText = '受信力: ' + score + ' パワー';
-                timeDisplay.innerText = '残り: ' + timeLeft + '秒';
-                startBtn.classList.add('hidden');
-                coin.classList.remove('hidden');
-
-                moveCoin();
-                gameInterval = setInterval(moveCoin, 800);
-                timerInterval = setInterval(updateTime, 1000);
-            }
-
-            function updateTime() {
-                timeLeft--;
-                timeDisplay.innerText = '残り: ' + timeLeft + '秒';
-                if (timeLeft <= 0) {
-                    endGame();
-                }
-            }
-
-            function moveCoin() {
-                const maxX = gameArea.clientWidth - 70;
-                const maxY = gameArea.clientHeight - 70;
-                const randomX = Math.max(10, Math.floor(Math.random() * maxX));
-                const randomY = Math.max(40, Math.floor(Math.random() * maxY));
-
-                coin.style.left = randomX + 'px';
-                coin.style.top = randomY + 'px';
-            }
-
-            function hitCoin() {
-                score += 100;
-                scoreDisplay.innerText = '受信力: ' + score + ' パワー';
-                moveCoin();
-                clearInterval(gameInterval);
-                gameInterval = setInterval(moveCoin, 700);
-            }
-
-            function endGame() {
-                clearInterval(gameInterval);
-                clearInterval(timerInterval);
-                coin.classList.add('hidden');
-                startBtn.classList.remove('hidden');
-                startBtn.innerText = 'もう一回プレイ！';
-                alert('タイムアップ！\nあなたの受信力は【 ' + score + ' パワー 】でした！\n\n「あなたの直感、かなり冴えてます…！🔮」\n下のボタンから詳細をチェックしてね！');
-            }
-        </script>
-    </section>
-
-    <!-- Dummy Form Section -->
-    <section class="max-w-4xl mx-auto py-16 px-4">
-        <h2 class="text-3xl font-bold text-center mb-10 text-purple-200">無料メール講座に申し込む💌</h2>
-        <div class="glass-panel p-8 rounded-xl shadow-lg border border-purple-300/50 text-center max-w-md mx-auto">
-            <p class="text-gray-700 mb-6 font-bold">お名前とメールアドレスを入力して、<br>すぐに秘密の情報をゲットしてください！</p>
-            <form id="dummyForm" class="space-y-4">
-                <div>
-                    <input type="text" placeholder="お名前" required class="w-full p-4 border border-purple-200 rounded-lg outline-none focus:ring-2 focus:ring-purple-400 bg-white/80">
-                </div>
-                <div>
-                    <input type="email" placeholder="メールアドレス" required class="w-full p-4 border border-purple-200 rounded-lg outline-none focus:ring-2 focus:ring-purple-400 bg-white/80">
-                </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold text-xl py-4 rounded-full shadow-lg hover:scale-105 transition-transform">
-                    今すぐ無料で申し込む！
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-24 px-4 text-center mt-10 relative">
-        <div class="absolute inset-0 bg-gradient-to-t from-purple-900 via-indigo-900 to-transparent opacity-90"></div>
-        <div class="relative z-10">
-            <h2 class="text-4xl md:text-5xl font-black mb-8 text-white drop-shadow-lg">あなたもスピリチュアル起業<br>はじめてみる？</h2>
-            <p class="text-2xl mb-10 text-purple-200">質問はInstagramにDMしてね！</p>
-            <a href="https://instagram.com/mama.mika.mama" target="_blank" class="inline-block bg-white text-purple-900 font-bold text-2xl md:text-3xl px-12 py-6 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-105 transition-transform border-4 border-purple-200">
-                Instagram: @mama.mika.mama
+            <a href="#" class="gold-btn px-16 py-6 rounded-sm tracking-widest text-xl font-bold inline-block w-full md:w-auto">
+                参加を申し込む (サンプル)
             </a>
-            <p class="mt-10 text-sm opacity-80 text-gray-300">今日おはなしした中でのURLなどはコメント欄に✍️</p>
+            <p class="text-xs text-gray-500 mt-6 font-sans">※お申し込み後、詳細な参加リンクをメールにてお送りいたします。</p>
         </div>
     </section>
 
-    <footer class="text-center py-8 text-gray-400 text-sm bg-black/80 backdrop-blur-md">
-        &copy; 2026 スピリチュアルカウンセラー 美香
+    <footer class="py-12 text-center text-gray-600 text-sm font-sans z-10 relative bg-black border-t border-white/10">
+        <p>&copy; 2026 AI × Instagram Master Class (Sample)</p>
     </footer>
 
-
     <script>
+        // スクロールアニメーション
         document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-up').forEach(el => {
+                observer.observe(el);
+            });
+
+            // ヒーロースライドショー (3秒間隔)
             const slides = document.querySelectorAll('.hero-slide');
             let current = 0;
             setInterval(() => {
                 slides[current].classList.remove('active');
                 current = (current + 1) % slides.length;
                 slides[current].classList.add('active');
-            }, 5000);
+            }, 3000);
         });
     </script>
-
 </body>
 </html>
