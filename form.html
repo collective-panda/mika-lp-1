@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お申し込み | AI × Instagram Master Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif JP', serif;
+            background-color: #050505;
+            color: #f8fafc;
+            background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+        }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .text-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #ffdf73 50%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border { border: 1px solid rgba(212, 175, 55, 0.4); }
+        .gold-btn {
+            background: linear-gradient(135deg, #2a2a2a 0%, #111 100%);
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+            color: #000;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transition: all 0.3s ease;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .input-field:focus {
+            border-color: #d4af37;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="w-full max-w-lg gold-border p-8 md:p-12 bg-black/80 backdrop-blur-md relative">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#aa771c] via-[#ffdf73] to-[#aa771c]"></div>
+        
+        <h1 class="font-cinzel text-2xl md:text-3xl text-gold tracking-widest mb-4 text-center">APPLICATION</h1>
+        <p class="text-sm text-gray-400 text-center mb-8 tracking-widest">
+            AI × Instagram Master Class<br>
+            <span class="text-red-500 border border-red-500 px-3 py-1 mt-4 inline-block text-xs">※これはサンプルフォームです</span>
+        </p>
+        
+        <form id="applyForm" class="space-y-6">
+            <div>
+                <label class="block text-sm text-gray-300 mb-2 tracking-wider">お名前 <span class="text-red-500">*</span></label>
+                <input type="text" required class="input-field w-full p-4 rounded-sm" placeholder="山田 太郎">
+            </div>
+            <div>
+                <label class="block text-sm text-gray-300 mb-2 tracking-wider">メールアドレス <span class="text-red-500">*</span></label>
+                <input type="email" required class="input-field w-full p-4 rounded-sm" placeholder="example@email.com">
+            </div>
+            <div>
+                <label class="block text-sm text-gray-300 mb-2 tracking-wider">InstagramアカウントID <span class="text-gray-500 text-xs">(任意)</span></label>
+                <input type="text" class="input-field w-full p-4 rounded-sm" placeholder="@your_account">
+            </div>
+            
+            <div class="pt-6">
+                <button type="submit" class="gold-btn w-full py-5 rounded-sm tracking-widest text-lg font-bold">
+                    送信して申し込む
+                </button>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="index.html" class="text-xs text-gray-500 hover:text-white transition tracking-widest border-b border-gray-600 pb-1">← LPに戻る</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('applyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // サンプルとしての動作
+            alert('【送信完了】\n\nお申し込みありがとうございます。\n※こちらはサンプル用のデモ画面のため、実際のデータ送信は行われません。\n\n「OK」を押すとトップページに戻ります。');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
